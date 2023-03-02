@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 계산기</title>
+    <!-- 계산기 UI css 파일을 로딩 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+         <!-- 
+            
+            참고자료 : https://sayyoung.tistory.com/37
+
+          -->
+        <input type="text" disabled>
+        <!-- 계산기 화면을 input객체로 만들되 비활성화를 통해 사용자 입력을 차단 -->
+        <div class="calc_wrap">
+          
+            <!-- 
+                
+                화면아래 버튼을 4등분씩 grid로 버튼을 나눔
+
+                크롬 콘솔창에서 buttons[5].dataset.type 으로 호출시 data-type 인자값이 넘어옴
+            
+            -->
+            <button data-type="ac" class="ac">AC</button>
+            <button data-type="operator">&divide;</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button data-type="operator">&times;</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button data-type="operator">-</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button data-type="operator">+</button>
+
+
+            <!-- ac , equals 에 class는 css 효과를 주기위한 id값 -->
+            <button class="zero">0</button>
+            <button>.</button>
+            <button data-type="equals" class="equals">=</button>
+            
+        </div>
+        <script src="calc.js"></script>
+        <!-- html를 미리 로딩을 해야 js에서 객체들 인식이 가능하다. -->
+    </main>
+</body>
+</html>

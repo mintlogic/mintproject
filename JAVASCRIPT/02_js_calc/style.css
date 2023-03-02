@@ -1,0 +1,64 @@
+main {
+    width: 150px;
+    margin: 0 auto; /* main태그 속 컨텐츠들 전부 중앙정렬 */
+}
+
+.calc_wrap {
+    /* 버튼을 그리드화 */
+    display: grid; 
+    /* 
+        그리드 컨테이너에서 4개로 나눈후 아이템별로 비율을 같게 만들어준다.
+        참고 : https://webty.tistory.com/152
+    */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+*{
+    /* 버튼별로 두꼐 등등 이유로 크기 동기회(?) : https://opentutorials.org/course/2418/13405 */
+    box-sizing: border-box; 
+    color: white;  /* 모든글자를 하얀색으로 */
+}
+
+input, button {
+    /* 인풋과 버튼의 세로길이 */
+    height: 35px;
+    /*  테두리 모양 : https://ossam5.tistory.com/139 */
+    outline: none;
+    /* border-radius: 5px; 버튼 간 착시현상 */
+}
+
+input {
+    width: 100%;
+    text-align: right;
+    border: none;    
+    background: #5B5B5D;
+    padding-right: 1rem;
+    font-size: 2rem;
+}
+
+button {
+    background: #828284;
+    border: 1px solid #454448;
+    font-size: 1rem;
+}
+
+button:nth-child(4n+2), button:last-child  {
+    /* 4등분으로 버튼을 나누었기에 번째 버튼에 색깔을 넣는다. */
+    background-color: orange;
+}
+
+button:hover {
+    /* 버튼 스쳐지는 효과 */
+    opacity: .5;
+}
+
+/* 위에서 그리드 컨테이너를 4등 나누었기에 빈자리만큼 ac. zero 버튼들을 묶어준다. */
+.ac {
+    /* ac버튼 색상 강조 */
+    grid-column: 1/4;
+    background: #6A6A6C;
+}
+
+.zero {
+    grid-column: 1/3;
+}
